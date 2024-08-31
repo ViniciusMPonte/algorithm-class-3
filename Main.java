@@ -3,18 +3,20 @@ import java.util.Scanner;
 public class Main {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
-        int firstNum, secondNum;
+        double hoursWorked, hourlyValue, percentageIncrease, grossSalary, newSalary;
 
-        System.out.println("Primeiro Número: ");
-        firstNum = scanner.nextInt(); 
-        
-        System.out.println("Segundo Número: ");
-        secondNum = scanner.nextInt();
+        System.out.print("Digite as horas trabalhadas: ");
+        hoursWorked = scanner.nextDouble();
 
-        System.out.println("Soma: " + (firstNum + secondNum));
-        System.out.println("Subtração: " + (firstNum - secondNum));
-        System.out.println("Multiplicação: " + (firstNum * secondNum));
-        System.out.println("Divisão: " + (firstNum / secondNum));
-        System.out.println("Resto da divisão: " + (firstNum % secondNum));
+        System.out.print("Digite o valor da hora: ");
+        hourlyValue = scanner.nextDouble(); 
+
+        System.out.print("Digite o percentual de aumento: ");
+        percentageIncrease = scanner.nextDouble(); 
+
+        grossSalary = hoursWorked * hourlyValue;
+        newSalary = grossSalary + ((grossSalary * percentageIncrease) / 100);
+
+        System.out.println("O novo salário é: " + newSalary);
     }
 }
